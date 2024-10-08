@@ -26,11 +26,16 @@ func main() {
 	// runtime error: index out of range [99] with length 4
 	// fmt.Printf("s3[99]: %d", s3[99])
 
-	// SubSlice()
+	SubSlice()
+	vivitest()
 
 	//shareArr()
 }
+func vivitest() {
+	ss1 := []int{1, 2}
+	fmt.Printf("vivitest : ss1: %v,len %d, cappp: %d,ss1[0]=%d,ss1[1]=%d", ss1, len(ss1), cap(ss1), ss1[0], ss1[1])
 
+}
 func SubSlice() {
 	s1 := []int{2, 4, 6, 8, 10}
 	s2 := s1[1:3]

@@ -6,23 +6,27 @@ func main() {
 	// duck1 是 *ToyDuck
 	duck1 := &ToyDuck{}
 	duck1.Swim()
+	fmt.Printf("1")
 
 	duck2 := ToyDuck{}
 	duck2.Swim()
+	fmt.Printf("2")
 
 	// duck3 是 *ToyDuck
 	duck3 := new(ToyDuck)
 	duck3.Swim()
+	fmt.Printf("3")
 
 	// 当你声明这样的时候，Go 就帮你分配好内存
 	// 不用担心空指针的问题，以为它压根就不是指针
 	var duck4 ToyDuck
 	duck4.Swim()
+	fmt.Printf("4")
 
-	// duck5 就是一个指针了
-	var duck5 *ToyDuck
+	// duck5 就是一个指针了duim
+	//var duck5 *ToyDuck
 	// 这边会直接panic 掉
-	duck5.Swim()
+	//duck5.Swim()
 
 	// 赋值，初始化按字段名字赋值
 	duck6 := ToyDuck{
@@ -47,8 +51,7 @@ type ToyDuck struct {
 	Price uint64
 }
 
+// t toduck是接收器，要创建实例才能调用这个swim方法
 func (t *ToyDuck) Swim() {
 	fmt.Printf("门前一条河，游过一群鸭，我是%s，%d一只\n", t.Color, t.Price)
 }
-
-

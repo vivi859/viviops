@@ -11,7 +11,7 @@ func main() {
 }
 
 func Young(age int) {
-	if age < 18{
+	if age < 18 {
 		fmt.Println("I am a child!")
 	} else {
 		// else 分支也可以没有
@@ -27,6 +27,6 @@ func IfUsingNewVariable(start int, end int) {
 		fmt.Printf("距离并不远，来一趟： %d\n", distance)
 	}
 
-	// 这里不能访问  distance
+	// 这里不能访问  distance 要能看懂这个作用域，出了if ，外面不能访问
 	//fmt.Printf("距离是： %d\n", distance)
 }

@@ -9,8 +9,9 @@ func main() {
 	println(`He said: "hello, Go"
 我还可以换个行
 `)
-	ppp
+
 	println(len("你好"))                      // 输出6
+	println(len("abcde"))                   //输出5
 	println(utf8.RuneCountInString("你好"))   // 输出 2
 	println(utf8.RuneCountInString("你好ab")) // 输出 4
 

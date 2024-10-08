@@ -17,6 +17,7 @@ func main() {
 	Fun4("hello", 19, "CUICUI", "DaMing")
 	s := []string{"CUICUI", "DaMing"}
 	Fun4("hello", 19, s...)
+
 }
 
 // Fun0 只有一个返回值，不需要括号括起来
@@ -48,7 +49,7 @@ func Fun3(a, b, c string, abc, bcd int, p string) (d, e int, g string) {
 }
 
 // Fun4 不定参数。不定参数要放在最后面
-func Fun4(a string, b int, names...string)  {
+func Fun4(a string, b int, names ...string) {
 	// 我们使用的时候可以直接把 names 看做切片
 	for _, name := range names {
 		fmt.Printf("不定参数：%s \n", name)

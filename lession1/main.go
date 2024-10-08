@@ -1,1 +1,5 @@
-package lession1
+package main
+
+func main() {
+	println("hello world")
+}
