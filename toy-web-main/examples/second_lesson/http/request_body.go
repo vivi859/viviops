@@ -41,8 +41,9 @@ func getBodyIsNil(w http.ResponseWriter, r *http.Request) {
 
 func queryParams(w http.ResponseWriter, r *http.Request) {
 	values := r.URL.Query()
-	// add vivi test 原生的话[0]可能是nil 需要判断
+	// add vivi test 原生的话[0]可能是nil 需要判断 http://localhost:8080/url/query?name=vi
 	// name := values.Get("name")[0]
+	//name := values["name"][0] //要先查看长度如果是空的 这样写[0]会崩 原生的http库
 	fmt.Fprintf(w, "query is %v\n", values)
 }
 
@@ -57,6 +58,7 @@ func header(w http.ResponseWriter, r *http.Request) {
 
 func form(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "before parse form %v\n", r.Form)
+	//要读取到form ，必须要先parseform 调用下才能读到 ，直接读r.Form就行
 	err := r.ParseForm()
 	if err != nil {
 		fmt.Fprintf(w, "parse form error %v\n", r.Form)

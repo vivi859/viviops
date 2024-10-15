@@ -11,11 +11,11 @@ type Swimming interface {
 	Swim()
 }
 
+// 组合可以加很多接口在里面，类似继承？
 type Duck interface {
 	// 鸭子是会游泳的，所以这里组合了它
 	Swimming
 }
-
 
 type Base struct {
 	Name string
